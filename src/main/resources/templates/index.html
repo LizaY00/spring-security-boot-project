@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2>Spring Security Task</h2>
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a href="../userList">UserList</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="container ml-5">
+            <h4 class="text-primary">Hello, <span class="text-success" th:text="${#authentication.getPrincipal().username}"></span>!</h4>
+        </div>
+        <div class="container">
+            <form action="/logout" method='POST'>
+                <button type="submit" class="btn btn-danger btn-lg">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                </button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
